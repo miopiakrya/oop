@@ -57,5 +57,5 @@ int main(int argc, char** argv) {
         delete[] arr[i];
     }
     delete[] arr;
-    delete(a);
-}
+    delete[] a;
+} 
