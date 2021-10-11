@@ -8,24 +8,24 @@ int main()
 
     Musician musician[4];
 
-    musician[0] = Musician("Пётр", "Чайковский", "07.08.1840", "фортепиано", 25);
- 
+    musician[0] = Musician("Пётр", "Чайковский", "07.08.1840", "Клавишник", 25);
+
     musician[1].setName("Виктор");
     musician[1].setSurName("Цой");
     musician[1].setDateOBirth("21.05.1962");
-    musician[1].setMusic("гитара");
+    musician[1].setMusic("Струнный");
     musician[1].setGrade(10);
 
     musician[2].setName("Сергей");
     musician[2].setSurName("Щелкановцев");
     musician[2].setDateOBirth("13.03.1966");
-    musician[2].setMusic("барабан");
+    musician[2].setMusic("Ударный");
     musician[2].setGrade(5);
 
     musician[3].setName("Никколо");
     musician[3].setSurName("Паганини");
     musician[3].setDateOBirth("27.11.1782");
-    musician[3].setMusic("скрипка");
+    musician[3].setMusic("Струнный");
     musician[3].setGrade(3);
 
     for (int i = 0; i < 3; i++)
@@ -38,13 +38,28 @@ int main()
     {
         for (int j = 0; j < 2; j++)
         {
+            if (musician[j].getMusic() == "Клавишник")
+            {
+                for (int z = 0; z < 3; z++)
+                {
+                    if (musician[z].getMusic() != "Клавишник");
+                    {
+                        Musician muse = musician[z];
+                        musician[z] = musician[j];
+                        musician[j] = muse;
+                    }
+                }  
+                continue;
+            }
             if (musician[j].getGrade() < musician[j + 1].getGrade())
             {
+                if (musician[j].getMusic() == "Клавишник")
+                    continue;
                 Musician muse = musician[j + 1];
                 musician[j + 1] = musician[j];
                 musician[j] = musician[j + 1];
             }
-        }  
+        }
     }
 
     for (int i = 0; i < 4; i++)
@@ -62,5 +77,13 @@ int main()
     musician[1].deserialize("D:\\Musicians\\1.txt");
     musician[2].deserialize("D:\\Musicians\\2.txt");
     musician[3].deserialize("D:\\Musicians\\3.txt");
+
+    for (int i = 0; i < 4; i++)
+    {
+        musician[i].emptySerialize();
+    }   
+
+    std::cout << "Read from.TXT" << std::endl;
+    musician[0].emptyDeserialize();
 }
 

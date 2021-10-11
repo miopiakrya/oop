@@ -1,110 +1,37 @@
 #pragma once
+
 #include <iostream>
 #include <iomanip>
-#include <sstream>
-#include <math.h>
 
 using namespace std;
 
 class Fraction
 {
 private:
-    int numb = 0, x, y;
+    int numb;
+    int x, y;
 public:
-    Fraction()
-    {
+    Fraction();
+    Fraction(int x, int y);
 
-    }
-    Fraction(int x, int y)
-    {
-        numb++;
-        this->x = x;
-        this->y = y;
-    }
+    int gcd(int n, int m);
 
-    int gcd(int n, int m)
-    {
-        if (n % m == 0)
-            return m;
-        if (m % n == 0)
-            return n;
+    void reduce(int x, int y);
 
-        if (n > m)
-            return gcd(n % m, m);
-        return gcd(n, m % n);
-    }
+    void printAsFraction(double decimal_fraction);
 
-    void reduce(int x, int y)
-    {
-        int gcdD = gcd(x, y);
+    int returnNumb();
 
-        x /= gcdD;
-        y /= gcdD;
+    void setNumb(int numb);
 
-        cout << x << "\\" << y << endl;
-    }
+    void printAsFraction(const char* decimal_fraction);
 
-    void printAsFraction(double decimal_fraction)
-    {
-        numb++;
-        stringstream ss;
-        ss << setprecision(15) << decimal_fraction;
-        string strNum = ss.str();
-        size_t pos = strNum.find('.');
+    void check() const;
 
-        decimal_fraction *= pow(10, strNum.size() - 1 - pos);
-        int decimal = (int)decimal_fraction;
-        int undecimal = pow(10, strNum.size() - 1 - pos);
-
-        reduce(decimal, undecimal);
-    }
-
-    void printAsFraction(const char* decimal_fraction)
-    {
-        numb++;
-        stringstream ss;
-        ss << setprecision(15) << decimal_fraction;
-        string strNum = ss.str();
-        size_t pos = strNum.find('.');
-
-        int decimal = stof(decimal_fraction) * pow(10, strNum.size() - 1 - pos);
-        int undecimal = pow(10, strNum.size() - 1 - pos);
-
-        reduce(decimal, undecimal);
-    }
-
-    void check() const
-    {
-        if (y == 0)
-        {
-            throw overflow_error("Знаменатель - 0!");
-        }
-    }
-
-    Fraction& operator+(const Fraction& rhs) const
-    {
-        int a = rhs.x, b = rhs.y;
-        Fraction fract(x * b + y * a, y * b);
-        return fract;
-    }
-    Fraction& operator-(const Fraction& rhs) const
-    {
-        int a = rhs.x, b = rhs.y;
-        Fraction fract(x * b - y * a, y * b);
-        return fract;
-    }
-    Fraction& operator*(const Fraction& rhs) const
-    {
-        int a = rhs.x, b = rhs.y;
-        Fraction fract(x * a, y * b);
-        return fract;
-    }
-    Fraction& operator/(const Fraction& rhs) const
-    {
-        int a = rhs.x, b = rhs.y;
-        Fraction fract(x * b, y * a);
-        return fract;
-    }
+    Fraction& operator+(const Fraction& rhs) const;
+    Fraction& operator-(const Fraction& rhs) const;
+    Fraction& operator*(const Fraction& rhs) const;
+    Fraction& operator/(const Fraction& rhs) const;
 
     friend istream& operator>>(std::istream& ist, Fraction& value)
     {
