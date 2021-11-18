@@ -1,0 +1,15 @@
+﻿  Lr5Z1.cpp
+C:\Users\doter\source\repos\Lr5Z1\Lr5Z1\Lr5Z1.cpp(130,14): warning C4101: 'temp': unreferenced local variable
+C:\Users\doter\source\repos\Lr5Z1\Lr5Z1\Lr5Z1.cpp(40,11): warning C4101: 'temp': unreferenced local variable
+C:\Users\doter\source\repos\Lr5Z1\Lr5Z1\Lr5Z1.cpp(32): message : while compiling class template member function 'void DataManager<int>::push(T)'
+          with
+          [
+              T=int
+          ]
+C:\Users\doter\source\repos\Lr5Z1\Lr5Z1\Lr5Z1.cpp(252): message : see reference to function template instantiation 'void DataManager<int>::push(T)' being compiled
+          with
+          [
+              T=int
+          ]
+C:\Users\doter\source\repos\Lr5Z1\Lr5Z1\Lr5Z1.cpp(251): message : see reference to class template instantiation 'DataManager<int>' being compiled
+  Lr5Z1.vcxproj -> C:\Users\doter\source\repos\Lr5Z1\Debug\Lr5Z1.exe

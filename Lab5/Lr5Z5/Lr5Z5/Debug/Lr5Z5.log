@@ -1,0 +1,16 @@
+﻿  Lr5Z5.cpp
+  The contents of <any> are available only with C++17 or later.
+C:\Users\doter\source\repos\Lr5Z5\Lr5Z5\Lr5Z5.cpp(68,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\doter\source\repos\Lr5Z5\Lr5Z5\Lr5Z5.cpp(38,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\doter\source\repos\Lr5Z5\Lr5Z5\Lr5Z5.cpp(37): message : while compiling class template member function 'bool Cache<int>::contains(T)'
+          with
+          [
+              T=int
+          ]
+C:\Users\doter\source\repos\Lr5Z5\Lr5Z5\Lr5Z5.cpp(93): message : see reference to function template instantiation 'bool Cache<int>::contains(T)' being compiled
+          with
+          [
+              T=int
+          ]
+C:\Users\doter\source\repos\Lr5Z5\Lr5Z5\Lr5Z5.cpp(82): message : see reference to class template instantiation 'Cache<int>' being compiled
+  Lr5Z5.vcxproj -> C:\Users\doter\source\repos\Lr5Z5\Debug\Lr5Z5.exe
