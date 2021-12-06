@@ -1,0 +1,16 @@
+﻿  Dealer.cpp
+  Deck.cpp
+C:\Users\doter\source\repos\Lab4\Lab4\Deck.cpp(28,19): warning C4244: 'initializing': conversion from '_Rep' to 'unsigned int', possible loss of data
+          with
+          [
+              _Rep=std::chrono::system_clock::rep
+          ]
+  Game.cpp
+C:\Users\doter\source\repos\Lab4\Lab4\Game.cpp(24,26): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\doter\source\repos\Lab4\Lab4\Game.cpp(32,26): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\doter\source\repos\Lab4\Lab4\Game.cpp(106,24): warning C4018: '<': signed/unsigned mismatch
+  Hand.cpp
+  Lab4.cpp
+  Player.cpp
+  Generating Code...
+  Lab4.vcxproj -> C:\Users\doter\source\repos\Lab4\Debug\Lab4.exe
