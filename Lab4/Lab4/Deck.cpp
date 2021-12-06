@@ -10,6 +10,11 @@ Deck::Deck()
 {
     std::string cards[52];
 
+    for (int i = 0; i < 13; i++)
+    {
+        cards[i] = faces[i] + char(3);
+    }
+
     for (int i = 13; i < 26; i++) 
     {
         cards[i] = faces[i - 13] + char(4);
